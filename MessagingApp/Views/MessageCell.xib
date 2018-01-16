@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessageCell" customModule="MessagingApp" customModuleProvider="target">
+            <connections>
+                <outlet property="bodyLabel" destination="N0a-0X-siR" id="4SR-H3-Kex"/>
+                <outlet property="containerView" destination="Efc-r5-KS1" id="l1P-QB-jkk"/>
+                <outlet property="nameLabel" destination="0t5-YC-2hh" id="ScV-h6-sb1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="112" id="ffo-Ws-AWx" customClass="MessageCell" customModule="MessagingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ffo-Ws-AWx" id="bdU-cG-DTI">
+                <rect key="frame" x="0.0" y="0.0" width="392" height="111.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzw-1c-ge7">
+                        <rect key="frame" x="6" y="5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="mEF-lN-EF6"/>
+                            <constraint firstAttribute="height" constant="50" id="sq0-RT-pXW"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efc-r5-KS1">
+                        <rect key="frame" x="64" y="6" width="320" height="100"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0t5-YC-2hh">
+                                <rect key="frame" x="8" y="1" width="312" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Merhaba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0a-0X-siR">
+                                <rect key="frame" x="8" y="24" width="312" height="76"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="N0a-0X-siR" secondAttribute="trailing" id="D3j-fq-Mn9"/>
+                            <constraint firstAttribute="bottom" secondItem="N0a-0X-siR" secondAttribute="bottom" id="DhY-ZX-iFD"/>
+                            <constraint firstItem="N0a-0X-siR" firstAttribute="top" secondItem="0t5-YC-2hh" secondAttribute="bottom" constant="2" id="Dlz-cI-ro5"/>
+                            <constraint firstAttribute="trailing" secondItem="0t5-YC-2hh" secondAttribute="trailing" id="Lfi-rg-lrY"/>
+                            <constraint firstItem="0t5-YC-2hh" firstAttribute="leading" secondItem="Efc-r5-KS1" secondAttribute="leading" constant="8" id="Mym-D9-7Em"/>
+                            <constraint firstItem="N0a-0X-siR" firstAttribute="top" secondItem="0t5-YC-2hh" secondAttribute="bottom" constant="2.5" id="Qr3-f2-ffk"/>
+                            <constraint firstItem="0t5-YC-2hh" firstAttribute="top" secondItem="Efc-r5-KS1" secondAttribute="top" constant="1" id="VI8-i6-Jhh"/>
+                            <constraint firstItem="N0a-0X-siR" firstAttribute="leading" secondItem="Efc-r5-KS1" secondAttribute="leading" constant="8" id="WFZ-RI-I7g"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Efc-r5-KS1" secondAttribute="trailing" constant="8" id="28M-E5-IOK"/>
+                    <constraint firstItem="Efc-r5-KS1" firstAttribute="top" secondItem="bdU-cG-DTI" secondAttribute="top" constant="6" id="29Y-0H-6jm"/>
+                    <constraint firstItem="qzw-1c-ge7" firstAttribute="top" secondItem="bdU-cG-DTI" secondAttribute="top" constant="5" id="6rO-G6-n51"/>
+                    <constraint firstItem="Efc-r5-KS1" firstAttribute="leading" secondItem="qzw-1c-ge7" secondAttribute="trailing" constant="8" id="DtT-sN-Atv"/>
+                    <constraint firstItem="Efc-r5-KS1" firstAttribute="leading" secondItem="qzw-1c-ge7" secondAttribute="trailing" constant="8" id="e1U-0P-ZEC"/>
+                    <constraint firstItem="qzw-1c-ge7" firstAttribute="leading" secondItem="bdU-cG-DTI" secondAttribute="leading" constant="6" id="jNY-cr-lda"/>
+                    <constraint firstAttribute="bottom" secondItem="qzw-1c-ge7" secondAttribute="bottom" constant="56.5" id="mD1-PD-v7j"/>
+                    <constraint firstAttribute="bottom" secondItem="Efc-r5-KS1" secondAttribute="bottom" constant="5.5" id="rne-Ue-92C"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-802" y="-678"/>
+        </tableViewCell>
+    </objects>
+</document>

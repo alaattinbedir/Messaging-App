@@ -16,7 +16,11 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        if (UserDefaults.standard.string(forKey: "nickname") != nil) {
+            performSegue(withIdentifier: "MessagesSegue", sender: nil)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,10 +29,12 @@ class LoginController: UIViewController {
     }
     
     
-    
     @IBAction func login(_ sender: Any) {
         
         let nickName:String = nickNameTextField.text!
+        
+        // store nick name
+        UserDefaults.standard.set(nickName, forKey: "nickname")  
         
         if nickName.count > 2 {
             performSegue(withIdentifier: "MessagesSegue", sender: nil)
