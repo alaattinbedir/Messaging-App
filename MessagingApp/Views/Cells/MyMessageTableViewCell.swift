@@ -28,7 +28,6 @@ class MyMessageTableViewCell: UITableViewCell {
     
     let textBubbleView: UIView = {
         let view = UIView()
-        //        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = true
         return view
