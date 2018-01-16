@@ -159,8 +159,6 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField.returnKeyType==UIReturnKeyType.send)
         {
-            // Dismiss the keyboard
-            textField.resignFirstResponder()
             sendMessage()
             refreshTableView()
         }
