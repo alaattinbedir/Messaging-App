@@ -28,22 +28,26 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set title with nickname
         self.title =  nickname
         
         // Setting tableView
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 66.0
         self.tableView.separatorStyle = .none
+        self.tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: "MessageTableViewCell")
+        self.view.addSubview(self.tableView)
+        
+        // Setting textField
         self.messageTextField.delegate = self
         self.messageTextField.keyboardType = UIKeyboardType.alphabet
         self.messageTextField.returnKeyType = UIReturnKeyType.send
         
-        self.tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: "MessageTableViewCell")
-        self.view.addSubview(self.tableView)
-        
+        // Set bottom constraint to move tableview and input panel smoothly.
         bottomConstraint = NSLayoutConstraint(item: messageInputView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint!)
         
+        // Listen show/hide keyboard notifications
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
@@ -91,6 +95,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         
         let avatarUrl = "https://image.ibb.co/bvmP2R/Whats_App_Image_2018_01_08_at_8_24_40_PM.jpg"
 
+        // Create my message and add to messages array to show in the list
         // type = 1 for my messages
         let myMessage = Message(message: message, timestamp: 12345678, nickname: nickname!, avatarUrl: avatarUrl, type: 1)
         self.messagesArray.append(myMessage)
@@ -100,6 +105,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         tableView.reloadData()
         messageTextField.text = ""
         
+        // move scroll to last item on the tableview
         let indexPath = IndexPath(item: self.messagesArray.count - 1, section: 0)
         self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
@@ -115,6 +121,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // hide keyboard when user touch the tableview
         messageTextField.endEditing(true)
     }
     
@@ -152,7 +159,8 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField.returnKeyType==UIReturnKeyType.send)
         {
-            textField.resignFirstResponder() // Dismiss the keyboard
+            // Dismiss the keyboard
+            textField.resignFirstResponder()
             sendMessage()
             refreshTableView()
         }
@@ -169,12 +177,13 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
             bottomConstraint?.constant = isKeyboardShowing ? -keyboardFrame!.height : 0
             
             UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                
+                // To move keyboard and input panel together invoke layoutIfNeeded method
                 self.view.layoutIfNeeded()
                 
             }, completion: { (completed) in
                 
                 if isKeyboardShowing {
+                    // Scroll to last item on the tableview after keyboard has shown 
                     let indexPath = IndexPath(item: self.messagesArray.count - 1, section: 0)
                     self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
                 }
