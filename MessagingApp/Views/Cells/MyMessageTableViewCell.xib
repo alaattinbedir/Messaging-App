@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkd-Jk-IxT">
-                                <rect key="frame" x="24" y="27" width="302" height="86"/>
+                                <rect key="frame" x="17" y="27" width="309" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="KVd-DN-geh"/>
                                 </constraints>
@@ -54,7 +54,7 @@
                             <constraint firstItem="Gkd-Jk-IxT" firstAttribute="top" secondItem="qwR-ZN-IEn" secondAttribute="bottom" constant="-2" id="DGj-hz-J4S"/>
                             <constraint firstItem="qwR-ZN-IEn" firstAttribute="leading" secondItem="nXj-lt-VOz" secondAttribute="leading" constant="8" id="Mn6-n7-FXp"/>
                             <constraint firstItem="Gkd-Jk-IxT" firstAttribute="top" secondItem="qwR-ZN-IEn" secondAttribute="bottom" constant="-2" id="bSY-3G-fL6"/>
-                            <constraint firstItem="Gkd-Jk-IxT" firstAttribute="leading" secondItem="nXj-lt-VOz" secondAttribute="leading" constant="24" id="c9C-Cg-eDj"/>
+                            <constraint firstItem="Gkd-Jk-IxT" firstAttribute="leading" secondItem="nXj-lt-VOz" secondAttribute="leading" constant="17" id="c9C-Cg-eDj"/>
                             <constraint firstAttribute="trailing" secondItem="qwR-ZN-IEn" secondAttribute="trailing" id="lYf-so-rs8"/>
                             <constraint firstItem="qwR-ZN-IEn" firstAttribute="top" secondItem="nXj-lt-VOz" secondAttribute="top" constant="8" id="sKe-vp-uWY"/>
                             <constraint firstAttribute="bottom" secondItem="Gkd-Jk-IxT" secondAttribute="bottom" constant="13.5" id="yw0-du-X0H"/>
