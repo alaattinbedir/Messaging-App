@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MessagesViewController.swift
 //  MessagingApp
 //
 //  Created by Alaattin Bedir on 13.01.2018.
