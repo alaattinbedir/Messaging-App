@@ -27,19 +27,25 @@ public class MessageService {
         self.manager.request(url).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
-                //to get JSON return value
+                // get JSON return value and check its format
                 guard let responseJSON = response.result.value as? [String: Any] else {
                     failure(0,"Error reading response")
                     return
                 }
                 
+                // Convert to json
                 let json = JSON(responseJSON)
+                
+                // Get json array  from data
                 let array = json["data"].arrayObject
                 
+                // Map json array to Array<Message> object
                 guard let messages:[Message] = Mapper<Message>().mapArray(JSONObject: array) else {
                     failure(0,"Error mapping response")
                     return
                 }
+                
+                // Send to array to calling controllers
                 completion(messages)
                 
             case .failure(let error):
