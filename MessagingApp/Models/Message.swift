@@ -9,7 +9,7 @@
 
 import ObjectMapper
 
-class MessageResponse: Mappable {
+class Message: Mappable {
     
     var message: String?
     var timestamp: Int32?

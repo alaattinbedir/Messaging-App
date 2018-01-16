@@ -21,7 +21,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageInputView: UIView!
     
-    var messagesArray = [MessageResponse]()
+    var messagesArray = [Message]()
     let nickname = UserDefaults.standard.string(forKey: "nickname")
     var bottomConstraint: NSLayoutConstraint?
     
@@ -81,10 +81,15 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     
     fileprivate func sendMessage() {
         let message = messageTextField.text!
+        
+        if message.count == 0 {
+            showMessage(message: "Please enter a text..")
+        }
+        
         let avatarUrl = "https://image.ibb.co/bvmP2R/Whats_App_Image_2018_01_08_at_8_24_40_PM.jpg"
 
         // type = 1 for my messages
-        let myMessage = MessageResponse(message: message, timestamp: 12345678, nickname: nickname!, avatarUrl: avatarUrl, type: 1)
+        let myMessage = Message(message: message, timestamp: 12345678, nickname: nickname!, avatarUrl: avatarUrl, type: 1)
         self.messagesArray.append(myMessage)
     }
     

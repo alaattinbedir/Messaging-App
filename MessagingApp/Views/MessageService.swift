@@ -21,7 +21,7 @@ public class MessageService {
         self.manager = Alamofire.SessionManager.default
     }
     
-    func getMessages(completion:@escaping (Array<MessageResponse>) -> Void, failure:@escaping (Int, String) -> Void) -> Void{
+    func getMessages(completion:@escaping (Array<Message>) -> Void, failure:@escaping (Int, String) -> Void) -> Void{
         let url: String = "https://jsonblob.com/api/jsonBlob/61d68d54-d93e-11e7-a24a-934385df7024"
         
         self.manager.request(url).validate(statusCode: 200..<300).responseJSON { response in
@@ -36,7 +36,7 @@ public class MessageService {
                 let json = JSON(responseJSON)
                 let array = json["data"].arrayObject
                 
-                guard let messages:[MessageResponse] = Mapper<MessageResponse>().mapArray(JSONObject: array) else {
+                guard let messages:[Message] = Mapper<Message>().mapArray(JSONObject: array) else {
                     failure(0,"Error mapping response")
                     return
                 }

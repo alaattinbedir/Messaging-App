@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MessagingApp/Models/Message.swift"
-            timestampString = "537818038.107177"
+            timestampString = "537818882.003845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "getMessages(json:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -97,38 +97,6 @@
             endingLineNumber = "27"
             landmarkName = "getMessages(completion:failure:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MessagingApp.MessageService.getMessages(completion: (Swift.Array&lt;MessagingApp.MessageResponse&gt;) -&gt; (), failure: (Swift.Int, Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "MessagingApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alaattinbedir/Projects/MessagingApp/MessagingApp/Models/MessageService.swift"
-                  timestampString = "537818038.287293"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in MessagingApp.MessageService.getMessages(completion: (Swift.Array&lt;MessagingApp.MessageResponse&gt;) -&gt; (), failure: (Swift.Int, Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "MessagingApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alaattinbedir/Projects/MessagingApp/MessagingApp/Models/MessageService.swift"
-                  timestampString = "537818038.289658"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
