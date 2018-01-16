@@ -35,6 +35,8 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         self.tableview.estimatedRowHeight = 66.0
         self.tableview.separatorStyle = .none
         self.messageTextField.delegate = self
+        self.messageTextField.keyboardType = UIKeyboardType.alphabet
+        self.messageTextField.returnKeyType = UIReturnKeyType.send
         
         self.tableview.register(MessageTableViewCell.self, forCellReuseIdentifier: "MessageTableViewCell")
         self.view.addSubview(self.tableview)
@@ -84,6 +86,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         
         if message.count == 0 {
             showMessage(message: "Please enter a text..")
+            return
         }
         
         let avatarUrl = "https://image.ibb.co/bvmP2R/Whats_App_Image_2018_01_08_at_8_24_40_PM.jpg"
@@ -146,6 +149,15 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         return self.messagesArray.count
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField.returnKeyType==UIReturnKeyType.send)
+        {
+            textField.resignFirstResponder() // Dismiss the keyboard
+            sendMessage()
+            refreshTableView()
+        }
+        return true
+    }
     
     @objc func handleKeyboardNotification(_ notification: Notification) {
         

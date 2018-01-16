@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -21,6 +21,10 @@ class LoginController: UIViewController {
             performSegue(withIdentifier: "MessagesSegue", sender: nil)
         }
         
+        self.nickNameTextField.delegate = self
+        self.nickNameTextField.keyboardType = UIKeyboardType.alphabet
+        self.nickNameTextField.returnKeyType = UIReturnKeyType.go
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,6 +32,14 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField.returnKeyType==UIReturnKeyType.go)
+        {
+            textField.resignFirstResponder() // Dismiss the keyboard
+            login()
+        }
+        return true
+    }
     
     fileprivate func showMessage() {
         let alert = UIAlertController(title: "Alert",
@@ -51,19 +63,21 @@ class LoginController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func login(_ sender: Any) {
-        
+    fileprivate func login() {
         let nickName:String = nickNameTextField.text!
         
         // store nick name to userdefaults
-        UserDefaults.standard.set(nickName, forKey: "nickname")  
+        UserDefaults.standard.set(nickName, forKey: "nickname")
         
         if nickName.count > 2 {
             performSegue(withIdentifier: "MessagesSegue", sender: nil)
         }else{
             showMessage()
         }
-        
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        login()
     }
     
     
