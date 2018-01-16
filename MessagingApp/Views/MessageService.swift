@@ -40,8 +40,8 @@ public class MessageService {
                     failure(0,"Error mapping response")
                     return
                 }
-                
                 completion(messages)
+                
             case .failure(let error):
                 failure(0,"Error \(error)")
             }

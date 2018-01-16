@@ -1,5 +1,5 @@
 //
-//  MessageResponse.swift
+//  Message.swift
 //  MessagingApp
 //
 //  Created by Alaattin Bedir on 14.01.2018.
