@@ -20,8 +20,6 @@
 		844C42F7200DD91D00A86AF3 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C42F6200DD91D00A86AF3 /* MessageService.swift */; };
 		844C4302200E16ED00A86AF3 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C4300200E16ED00A86AF3 /* MyMessageTableViewCell.swift */; };
 		844C4303200E16ED00A86AF3 /* MyMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C4301200E16ED00A86AF3 /* MyMessageTableViewCell.xib */; };
-		847AB671200B8D22008E8B00 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AB670200B8D22008E8B00 /* MessageCell.xib */; };
-		847AB673200B8DD7008E8B00 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AB672200B8DD7008E8B00 /* MessageCell.swift */; };
 		847AB676200CBBDF008E8B00 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AB674200CBBDF008E8B00 /* MessageTableViewCell.swift */; };
 		847AB677200CBBDF008E8B00 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AB675200CBBDF008E8B00 /* MessageTableViewCell.xib */; };
 		EC49B5AF949CF17FB34318DF /* Pods_MessagingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372C96A0B6A5AEA188538792 /* Pods_MessagingApp.framework */; };
@@ -57,8 +55,6 @@
 		844C42F6200DD91D00A86AF3 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		844C4300200E16ED00A86AF3 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
 		844C4301200E16ED00A86AF3 /* MyMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMessageTableViewCell.xib; sourceTree = "<group>"; };
-		847AB670200B8D22008E8B00 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
-		847AB672200B8DD7008E8B00 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		847AB674200CBBDF008E8B00 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		847AB675200CBBDF008E8B00 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		9F9144D7CE1644DB4EFB368A /* Pods-MessagingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagingAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessagingAppTests/Pods-MessagingAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,13 +119,10 @@
 				847AB66B200B8041008E8B00 /* Views */,
 				8436DB71200A8C88005052E2 /* Models */,
 				8436DB51200A7219005052E2 /* AppDelegate.swift */,
-				8436DB78200B6507005052E2 /* LoginController.swift */,
-				8436DB53200A7219005052E2 /* MessagesViewController.swift */,
 				8436DB55200A7219005052E2 /* Main.storyboard */,
 				8436DB58200A7219005052E2 /* Assets.xcassets */,
 				8436DB5A200A7219005052E2 /* LaunchScreen.storyboard */,
 				8436DB5D200A7219005052E2 /* Info.plist */,
-				844C42F6200DD91D00A86AF3 /* MessageService.swift */,
 			);
 			path = MessagingApp;
 			sourceTree = "<group>";
@@ -146,21 +139,38 @@
 		8436DB71200A8C88005052E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				844C42F6200DD91D00A86AF3 /* MessageService.swift */,
 				8436DB72200A8CA8005052E2 /* Message.swift */,
 				8436DB76200B59AD005052E2 /* MessageResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		847AB66B200B8041008E8B00 /* Views */ = {
+		844C4304200E2C3C00A86AF3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				847AB674200CBBDF008E8B00 /* MessageTableViewCell.swift */,
 				847AB675200CBBDF008E8B00 /* MessageTableViewCell.xib */,
-				847AB670200B8D22008E8B00 /* MessageCell.xib */,
-				847AB672200B8DD7008E8B00 /* MessageCell.swift */,
 				844C4300200E16ED00A86AF3 /* MyMessageTableViewCell.swift */,
 				844C4301200E16ED00A86AF3 /* MyMessageTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		844C4305200E2C5200A86AF3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8436DB78200B6507005052E2 /* LoginController.swift */,
+				8436DB53200A7219005052E2 /* MessagesViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		847AB66B200B8041008E8B00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				844C4305200E2C5200A86AF3 /* View Controllers */,
+				844C4304200E2C3C00A86AF3 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8436DB5C200A7219005052E2 /* LaunchScreen.storyboard in Resources */,
-				847AB671200B8D22008E8B00 /* MessageCell.xib in Resources */,
 				847AB677200CBBDF008E8B00 /* MessageTableViewCell.xib in Resources */,
 				844C4303200E16ED00A86AF3 /* MyMessageTableViewCell.xib in Resources */,
 				8436DB59200A7219005052E2 /* Assets.xcassets in Resources */,
@@ -404,7 +413,6 @@
 				844C42F7200DD91D00A86AF3 /* MessageService.swift in Sources */,
 				844C4302200E16ED00A86AF3 /* MyMessageTableViewCell.swift in Sources */,
 				847AB676200CBBDF008E8B00 /* MessageTableViewCell.swift in Sources */,
-				847AB673200B8DD7008E8B00 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
