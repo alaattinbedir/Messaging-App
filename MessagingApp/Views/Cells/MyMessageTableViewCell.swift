@@ -38,10 +38,11 @@ class MyMessageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         self.avatarImageView.contentMode = UIViewContentMode.scaleAspectFit
-        self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2
+        self.avatarImageView.layer.borderWidth = 1
+        self.avatarImageView.layer.masksToBounds = false
+        self.avatarImageView.layer.borderColor = UIColor.black.cgColor
+        self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.height/2
         self.avatarImageView.clipsToBounds = true
-        self.avatarImageView.layer.masksToBounds = false;
-        self.avatarImageView.layer.cornerRadius = 8;
         
         self.nameLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
         self.nameLabel.textColor = UIColor(red: 0/255.0, green: 128/255.0, blue: 64/255.0, alpha: 1.0)
