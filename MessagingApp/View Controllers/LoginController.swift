@@ -55,7 +55,7 @@ class LoginController: UIViewController {
         
         let nickName:String = nickNameTextField.text!
         
-        // store nick name
+        // store nick name to userdefaults
         UserDefaults.standard.set(nickName, forKey: "nickname")  
         
         if nickName.count > 2 {
