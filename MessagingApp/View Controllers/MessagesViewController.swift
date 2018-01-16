@@ -15,7 +15,7 @@ import ObjectMapper
 
 class MessagesViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
@@ -31,15 +31,15 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         self.title =  nickname
         
         // Setting tableView
-        self.tableview.rowHeight = UITableViewAutomaticDimension
-        self.tableview.estimatedRowHeight = 66.0
-        self.tableview.separatorStyle = .none
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 66.0
+        self.tableView.separatorStyle = .none
         self.messageTextField.delegate = self
         self.messageTextField.keyboardType = UIKeyboardType.alphabet
         self.messageTextField.returnKeyType = UIReturnKeyType.send
         
-        self.tableview.register(MessageTableViewCell.self, forCellReuseIdentifier: "MessageTableViewCell")
-        self.view.addSubview(self.tableview)
+        self.tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: "MessageTableViewCell")
+        self.view.addSubview(self.tableView)
         
         bottomConstraint = NSLayoutConstraint(item: messageInputView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint!)
@@ -51,7 +51,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         MessageService.sharedInstance.getMessages(completion: { (messages) in
             self.messagesArray = messages
             if self.messagesArray.count > 0 {
-                self.tableview.reloadData()
+                self.tableView.reloadData()
             }
         }) { (code, error) in
             self.showMessage(message: error)
@@ -97,11 +97,11 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     }
     
     fileprivate func refreshTableView() {
-        tableview.reloadData()
+        tableView.reloadData()
         messageTextField.text = ""
         
         let indexPath = IndexPath(item: self.messagesArray.count - 1, section: 0)
-        self.tableview.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
     
     @IBAction func send(_ sender: Any) {
@@ -176,7 +176,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
                 
                 if isKeyboardShowing {
                     let indexPath = IndexPath(item: self.messagesArray.count - 1, section: 0)
-                    self.tableview.scrollToRow(at: indexPath, at: .bottom, animated: true)
+                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
                 }
                 
             })

@@ -139,7 +139,7 @@
                         <outlet property="messageInputView" destination="EpW-Ml-jo6" id="Zsc-4a-Rdk"/>
                         <outlet property="messageTextField" destination="q4o-0Z-TPx" id="h4c-hX-iV0"/>
                         <outlet property="sendButton" destination="Aej-MQ-Jmt" id="UC3-pr-pjd"/>
-                        <outlet property="tableview" destination="7oP-b3-sMk" id="o3X-9D-PXJ"/>
+                        <outlet property="tableView" destination="7oP-b3-sMk" id="o3X-9D-PXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
