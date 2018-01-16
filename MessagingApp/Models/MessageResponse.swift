@@ -15,7 +15,7 @@ class MessageResponse: Mappable {
     var timestamp: Int32?
     var nickname: String?
     var avatarUrl: String?
-    var type:UInt8 = 0
+    var type:UInt8 = 0  
     
     init(message: String, timestamp: Int32, nickname: String, avatarUrl: String, type:UInt8) {
         self.message = message

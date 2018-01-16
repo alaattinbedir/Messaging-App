@@ -21,9 +21,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageInputView: UIView!
     
-//    var messagesArray = [[String:AnyObject]]() //Array of dictionary
     var messagesArray = [MessageResponse]()
-    
     let nickname = UserDefaults.standard.string(forKey: "nickname")
     var bottomConstraint: NSLayoutConstraint?
     
@@ -47,33 +45,15 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-
+        // Get messages from service
         MessageService.sharedInstance.getMessages(completion: { (messages) in
-            
-            messages.forEach({ (element) -> Void in
-                print(element.avatarUrl)
-            })
-            
             self.messagesArray = messages
             if self.messagesArray.count > 0 {
                 self.tableview.reloadData()
             }
-
         }) { (code, error) in
             self.showMessage(message: error)
         }
-        
-        
-//        MessageService.sharedInstance.getMessages2(completion: { (messages) in
-//            self.messagesArray = messages
-//
-//            if self.messagesArray.count > 0 {
-//                self.tableview.reloadData()
-//            }
-//        }) { (code, error) in
-//            self.showMessage(message: error)
-//        }
-        
         
     }
 
@@ -100,14 +80,11 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     }
     
     fileprivate func sendMessage() {
-        
         let message = messageTextField.text!
         let avatarUrl = "https://image.ibb.co/bvmP2R/Whats_App_Image_2018_01_08_at_8_24_40_PM.jpg"
-        
-//        let myMessage = ["nickname": nickname ?? "", "message": message , "timestamp": 12345678, "avatarUrl": avatarUrl, "type": 1 ] as [String : Any]
-        
+
+        // type = 1 for my messages
         let myMessage = MessageResponse(message: message, timestamp: 12345678, nickname: nickname!, avatarUrl: avatarUrl, type: 1)
-        
         self.messagesArray.append(myMessage)
     }
     
@@ -123,6 +100,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         sendMessage()
         refreshTableView()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -163,7 +141,6 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         return self.messagesArray.count
     }
     
-
     
     @objc func handleKeyboardNotification(_ notification: Notification) {
         
