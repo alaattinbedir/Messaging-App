@@ -64,7 +64,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         let message = messageTextField.text!
         let avatarUrl = "https://image.ibb.co/bvmP2R/Whats_App_Image_2018_01_08_at_8_24_40_PM.jpg"
         
-        let myMessage = ["nickname": nickname, "message": message , "timestamp": 12345678, "avatarUrl": avatarUrl] as [String : Any]
+        let myMessage = ["nickname": nickname ?? "", "message": message , "timestamp": 12345678, "avatarUrl": avatarUrl, "type": 1 ] as [String : Any]
         
         //        let myMessage = Message.init(message: messageTextField.text!, timestamp: 123123, nickname: "Alaattin", avatarUrl: "")
         self.messagesArray.append(myMessage as [String : AnyObject])
@@ -130,9 +130,12 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var dict = self.messagesArray[indexPath.row]
-        let timestamp:Int = dict["timestamp"] as! Int
+        var msgType = 0
+        if dict["type"] != nil {
+            msgType = dict["type"] as! Int
+        }
         
-        if timestamp == 12345678 {
+        if msgType == 1 {
             let myCell = Bundle.main.loadNibNamed("MyMessageTableViewCell", owner: self, options: nil)?.first as! MyMessageTableViewCell
             myCell.avatarImageView.loadImageUsingCache(withUrl: (dict["avatarUrl"] as? String)!)
             myCell.nameLabel.text = dict["nickname"] as? String
