@@ -57,7 +57,6 @@ class LoginController: UIViewController,UITextFieldDelegate {
             case .destructive:
                 print("destructive")
                 
-                
             }}))
         
         self.present(alert, animated: true, completion: nil)
