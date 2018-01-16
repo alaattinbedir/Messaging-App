@@ -28,7 +28,6 @@ class MessageTableViewCell: UITableViewCell {
     
     let textBubbleView: UIView = {
         let view = UIView()
-        //        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = true
         return view
@@ -37,12 +36,6 @@ class MessageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        self.avatarImageView.contentMode = UIViewContentMode.scaleAspectFit
-//        self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2
-//        self.avatarImageView.clipsToBounds = true
-//        self.avatarImageView.layer.masksToBounds = false;
-//        self.avatarImageView.layer.cornerRadius = 8;
-        
         self.avatarImageView.contentMode = UIViewContentMode.scaleAspectFit
         self.avatarImageView.layer.borderWidth = 1
         self.avatarImageView.layer.masksToBounds = false
@@ -57,7 +50,6 @@ class MessageTableViewCell: UITableViewCell {
         self.bodyLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         self.bodyLabel.numberOfLines = 0
 
-//        self.containerView.layer.cornerRadius = 8.0
         self.containerView.clipsToBounds = true
         self.containerView.backgroundColor = UIColor.clear
         self.textBubbleView.addSubview(bubbleImageView)
