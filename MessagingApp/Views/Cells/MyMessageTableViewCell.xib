@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble_blue" translatesAutoresizingMaskIntoConstraints="NO" id="cyc-YT-5gY">
-                        <rect key="frame" x="20" y="27" width="338" height="93"/>
+                        <rect key="frame" x="20" y="27" width="338" height="100"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qbp-6i-hNU">
                         <rect key="frame" x="366" y="67" width="60" height="60"/>
@@ -66,7 +66,7 @@
                     <constraint firstItem="cyc-YT-5gY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="FzR-5c-6EV"/>
                     <constraint firstItem="qbp-6i-hNU" firstAttribute="leading" secondItem="cyc-YT-5gY" secondAttribute="trailing" constant="8" id="KEU-CX-HFf"/>
                     <constraint firstItem="qbp-6i-hNU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="67" id="OBm-UX-T6r"/>
-                    <constraint firstAttribute="bottom" secondItem="cyc-YT-5gY" secondAttribute="bottom" constant="10.5" id="Oy0-RA-JZi"/>
+                    <constraint firstAttribute="bottom" secondItem="cyc-YT-5gY" secondAttribute="bottom" constant="3.5" id="Oy0-RA-JZi"/>
                     <constraint firstItem="nXj-lt-VOz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="QyW-jd-ClR"/>
                     <constraint firstItem="qbp-6i-hNU" firstAttribute="leading" secondItem="nXj-lt-VOz" secondAttribute="trailing" constant="8" id="SRp-hh-4fr"/>
                     <constraint firstAttribute="bottom" secondItem="qbp-6i-hNU" secondAttribute="bottom" constant="3.5" id="jW4-Pw-nut"/>
