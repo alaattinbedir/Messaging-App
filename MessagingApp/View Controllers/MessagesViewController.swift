@@ -30,7 +30,7 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         
         self.title =  nickname
         
-        //Constructing tableView.
+        // Setting tableView
         self.tableview.rowHeight = UITableViewAutomaticDimension
         self.tableview.estimatedRowHeight = 66.0
         self.tableview.separatorStyle = .none
