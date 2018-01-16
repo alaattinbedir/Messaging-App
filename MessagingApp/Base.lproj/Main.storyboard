@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your nick name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-Zi-t6v">
-                                <rect key="frame" x="72" y="285" width="230" height="30"/>
+                                <rect key="frame" x="72" y="285" width="239" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bCu-LS-i0l"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                         <constraints>
                             <constraint firstItem="SN4-Zi-t6v" firstAttribute="leading" secondItem="P2H-RJ-WSD" secondAttribute="leading" constant="72" id="54Q-6S-gB6"/>
                             <constraint firstItem="tI6-qH-0mt" firstAttribute="leading" secondItem="P2H-RJ-WSD" secondAttribute="leading" constant="72" id="6rE-Ia-Fwb"/>
-                            <constraint firstItem="P2H-RJ-WSD" firstAttribute="trailing" secondItem="SN4-Zi-t6v" secondAttribute="trailing" constant="73" id="bdv-al-Pdk"/>
+                            <constraint firstItem="P2H-RJ-WSD" firstAttribute="trailing" secondItem="SN4-Zi-t6v" secondAttribute="trailing" constant="64" id="bdv-al-Pdk"/>
                             <constraint firstItem="SN4-Zi-t6v" firstAttribute="top" secondItem="P2H-RJ-WSD" secondAttribute="top" constant="221" id="fV3-91-QC5"/>
                             <constraint firstItem="tI6-qH-0mt" firstAttribute="top" secondItem="SN4-Zi-t6v" secondAttribute="bottom" constant="20" id="nEY-WB-22o"/>
                             <constraint firstItem="P2H-RJ-WSD" firstAttribute="trailing" secondItem="tI6-qH-0mt" secondAttribute="trailing" constant="64" id="wjQ-3B-fLx"/>
@@ -95,7 +95,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpW-Ml-jo6">
                                 <rect key="frame" x="0.0" y="616" width="375" height="51"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4o-0Z-TPx">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4o-0Z-TPx">
                                         <rect key="frame" x="8" y="10" width="303" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="303" id="DG7-8v-r2U"/>
@@ -105,7 +105,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-MQ-Jmt">
-                                        <rect key="frame" x="331" y="10" width="36" height="30"/>
+                                        <rect key="frame" x="319" y="10" width="48" height="30"/>
                                         <state key="normal" title="Send"/>
                                         <connections>
                                             <action selector="send:" destination="BYZ-38-t0r" eventType="touchUpInside" id="he8-qx-V9g"/>
@@ -114,7 +114,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Aej-MQ-Jmt" firstAttribute="leading" secondItem="q4o-0Z-TPx" secondAttribute="trailing" constant="20" id="126-8W-Jfg"/>
+                                    <constraint firstItem="Aej-MQ-Jmt" firstAttribute="leading" secondItem="q4o-0Z-TPx" secondAttribute="trailing" constant="8" id="126-8W-Jfg"/>
                                     <constraint firstItem="q4o-0Z-TPx" firstAttribute="leading" secondItem="EpW-Ml-jo6" secondAttribute="leading" constant="8" id="84x-TI-2LX"/>
                                     <constraint firstItem="q4o-0Z-TPx" firstAttribute="top" secondItem="Aej-MQ-Jmt" secondAttribute="top" id="EW0-hM-FV9"/>
                                     <constraint firstAttribute="height" constant="51" id="N8E-zf-BHd"/>
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="0.0"/>
+            <point key="canvasLocation" x="77.599999999999994" y="-0.44977511244377816"/>
         </scene>
     </scenes>
 </document>

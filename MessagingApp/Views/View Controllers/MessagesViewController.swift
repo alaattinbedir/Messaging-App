@@ -59,23 +59,28 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         
     }
 
-    @IBAction func send(_ sender: Any) {
-        
+    fileprivate func sendMessage() {
         let nickname = UserDefaults.standard.string(forKey: "nickname")
         let message = messageTextField.text!
         let avatarUrl = "https://image.ibb.co/bvmP2R/Whats_App_Image_2018_01_08_at_8_24_40_PM.jpg"
         
         let myMessage = ["nickname": nickname, "message": message , "timestamp": 12345678, "avatarUrl": avatarUrl] as [String : Any]
         
-//        let myMessage = Message.init(message: messageTextField.text!, timestamp: 123123, nickname: "Alaattin", avatarUrl: "")
+        //        let myMessage = Message.init(message: messageTextField.text!, timestamp: 123123, nickname: "Alaattin", avatarUrl: "")
         self.messagesArray.append(myMessage as [String : AnyObject])
-        
+    }
+    
+    fileprivate func refreshTableView() {
         tableview.reloadData()
         messageTextField.text = ""
         
         let indexPath = IndexPath(item: self.messagesArray.count - 1, section: 0)
         self.tableview.scrollToRow(at: indexPath, at: .bottom, animated: true)
-        
+    }
+    
+    @IBAction func send(_ sender: Any) {
+        sendMessage()
+        refreshTableView()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
