@@ -29,6 +29,28 @@ class LoginController: UIViewController {
     }
     
     
+    fileprivate func showMessage() {
+        let alert = UIAlertController(title: "Alert",
+                                      message: "Please enter your nickname greater than 2 characters",
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func login(_ sender: Any) {
         
         let nickName:String = nickNameTextField.text!
@@ -39,25 +61,7 @@ class LoginController: UIViewController {
         if nickName.count > 2 {
             performSegue(withIdentifier: "MessagesSegue", sender: nil)
         }else{
-            let alert = UIAlertController(title: "Alert",
-                                          message: "Please enter your nickname greater than 2 characters",
-                                          preferredStyle: UIAlertControllerStyle.alert)
-            
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                switch action.style{
-                case .default:
-                    print("default")
-                    
-                case .cancel:
-                    print("cancel")
-                    
-                case .destructive:
-                    print("destructive")
-                    
-                    
-                }}))
-            
-            self.present(alert, animated: true, completion: nil)
+            showMessage()
         }
         
     }

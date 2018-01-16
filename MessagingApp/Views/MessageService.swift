@@ -28,11 +28,14 @@ public class MessageService {
             switch response.result {
             case .success:
                 //to get JSON return value
-                guard let responseJSON = response.result.value as? Array<[String: AnyObject]> else {
+                guard let responseJSON = response.result.value as? [String: Any] else {
                     failure(0,"Error reading response")
                     return
                 }
-                guard let messages:[MessageResponse] = Mapper<MessageResponse>().mapArray(JSONArray: responseJSON) else {
+                let swiftyJsonVar = JSON(responseJSON)
+                let array = swiftyJsonVar["data"].arrayObject
+                
+                guard let messages:[MessageResponse] = Mapper<MessageResponse>().mapArray(JSONObject: array) else {
                     failure(0,"Error mapping response")
                     return
                 }
@@ -44,8 +47,26 @@ public class MessageService {
         }
     }
     
-    func printMyName() -> Void {
-        print("Alaattin")
+    
+    func getMessages2(completion:@escaping ([[String:AnyObject]]) -> Void ,  failure:@escaping (Int, String) -> Void) -> Void {
+        Alamofire.request("https://jsonblob.com/api/jsonBlob/61d68d54-d93e-11e7-a24a-934385df7024")
+            .responseJSON { response in
+                guard response.result.isSuccess else {
+                    failure(0,"Error while fetching data: \(response.result.error ?? "" as! Error)")
+                    return
+                }
+                
+                guard let responseJSON = response.result.value as? [String: Any] else {
+                    failure(0,"Invalid data received from the service")
+                    return
+                }
+                let Json = JSON(responseJSON)
+                
+                if let responseArray = Json["data"].arrayObject {
+                    completion(responseArray as! [[String : AnyObject]])
+                }
+        }
     }
+
     
 }

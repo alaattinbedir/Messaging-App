@@ -14,12 +14,12 @@
 		8436DB59200A7219005052E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8436DB58200A7219005052E2 /* Assets.xcassets */; };
 		8436DB5C200A7219005052E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8436DB5A200A7219005052E2 /* LaunchScreen.storyboard */; };
 		8436DB67200A721A005052E2 /* MessagingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436DB66200A721A005052E2 /* MessagingAppTests.swift */; };
-		8436DB73200A8CA8005052E2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436DB72200A8CA8005052E2 /* Message.swift */; };
 		8436DB77200B59AD005052E2 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436DB76200B59AD005052E2 /* MessageResponse.swift */; };
 		8436DB79200B6507005052E2 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436DB78200B6507005052E2 /* LoginController.swift */; };
 		844C42F7200DD91D00A86AF3 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C42F6200DD91D00A86AF3 /* MessageService.swift */; };
 		844C4302200E16ED00A86AF3 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C4300200E16ED00A86AF3 /* MyMessageTableViewCell.swift */; };
 		844C4303200E16ED00A86AF3 /* MyMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C4301200E16ED00A86AF3 /* MyMessageTableViewCell.xib */; };
+		844C4309200E44C200A86AF3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C4308200E44C200A86AF3 /* Utilities.swift */; };
 		847AB676200CBBDF008E8B00 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AB674200CBBDF008E8B00 /* MessageTableViewCell.swift */; };
 		847AB677200CBBDF008E8B00 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AB675200CBBDF008E8B00 /* MessageTableViewCell.xib */; };
 		EC49B5AF949CF17FB34318DF /* Pods_MessagingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372C96A0B6A5AEA188538792 /* Pods_MessagingApp.framework */; };
@@ -49,12 +49,12 @@
 		8436DB62200A721A005052E2 /* MessagingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessagingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8436DB66200A721A005052E2 /* MessagingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingAppTests.swift; sourceTree = "<group>"; };
 		8436DB68200A721A005052E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8436DB72200A8CA8005052E2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8436DB76200B59AD005052E2 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
 		8436DB78200B6507005052E2 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		844C42F6200DD91D00A86AF3 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		844C4300200E16ED00A86AF3 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
 		844C4301200E16ED00A86AF3 /* MyMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMessageTableViewCell.xib; sourceTree = "<group>"; };
+		844C4308200E44C200A86AF3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		847AB674200CBBDF008E8B00 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		847AB675200CBBDF008E8B00 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		9F9144D7CE1644DB4EFB368A /* Pods-MessagingAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagingAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessagingAppTests/Pods-MessagingAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +116,9 @@
 		8436DB50200A7219005052E2 /* MessagingApp */ = {
 			isa = PBXGroup;
 			children = (
+				844C430B200E749D00A86AF3 /* Helpers */,
+				844C430A200E749100A86AF3 /* API */,
+				844C4305200E2C5200A86AF3 /* View Controllers */,
 				847AB66B200B8041008E8B00 /* Views */,
 				8436DB71200A8C88005052E2 /* Models */,
 				8436DB51200A7219005052E2 /* AppDelegate.swift */,
@@ -139,8 +142,6 @@
 		8436DB71200A8C88005052E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				844C42F6200DD91D00A86AF3 /* MessageService.swift */,
-				8436DB72200A8CA8005052E2 /* Message.swift */,
 				8436DB76200B59AD005052E2 /* MessageResponse.swift */,
 			);
 			path = Models;
@@ -166,10 +167,26 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		844C430A200E749100A86AF3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				844C42F6200DD91D00A86AF3 /* MessageService.swift */,
+			);
+			name = API;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		844C430B200E749D00A86AF3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				844C4308200E44C200A86AF3 /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		847AB66B200B8041008E8B00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				844C4305200E2C5200A86AF3 /* View Controllers */,
 				844C4304200E2C3C00A86AF3 /* Cells */,
 			);
 			path = Views;
@@ -406,7 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8436DB77200B59AD005052E2 /* MessageResponse.swift in Sources */,
-				8436DB73200A8CA8005052E2 /* Message.swift in Sources */,
+				844C4309200E44C200A86AF3 /* Utilities.swift in Sources */,
 				8436DB54200A7219005052E2 /* MessagesViewController.swift in Sources */,
 				8436DB52200A7219005052E2 /* AppDelegate.swift in Sources */,
 				8436DB79200B6507005052E2 /* LoginController.swift in Sources */,
