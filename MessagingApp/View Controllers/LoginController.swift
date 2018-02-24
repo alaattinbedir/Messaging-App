@@ -10,8 +10,22 @@ import UIKit
 
 class LoginController: UIViewController,UITextFieldDelegate {
 
-    @IBOutlet weak var nickNameTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+//    @IBOutlet weak var nickNameTextField: UITextField!
+//    @IBOutlet weak var loginButton: UIButton!
+    
+    let nickNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.keyboardType = UIKeyboardType.alphabet
+        textField.returnKeyType = UIReturnKeyType.go
+        return textField
+    }()
+    
+    
+    let loginButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.text = "Login"
+        return button
+    }()
     
     
     override func viewDidLoad() {
@@ -21,9 +35,13 @@ class LoginController: UIViewController,UITextFieldDelegate {
             performSegue(withIdentifier: "MessagesSegue", sender: nil)
         }
         
-        self.nickNameTextField.delegate = self
-        self.nickNameTextField.keyboardType = UIKeyboardType.alphabet
-        self.nickNameTextField.returnKeyType = UIReturnKeyType.go
+        nickNameTextField.delegate = self
+        self.view.addSubview(nickNameTextField)
+        self.view.addSubview(loginButton)
+        
+        
+        
+        
         
     }
     

@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import AlamofireObjectMapper
 import ObjectMapper
 
 
