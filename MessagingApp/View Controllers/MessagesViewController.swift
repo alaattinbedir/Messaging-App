@@ -52,12 +52,12 @@ class MessagesViewController: UIViewController , UITableViewDelegate, UITableVie
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         // Get messages from service
-        MessageService.sharedInstance.getMessages(completion: { (messages) in
+        Message.getMessages(success: { (messages) in
             self.messagesArray = messages
             if self.messagesArray.count > 0 {
                 self.tableView.reloadData()
             }
-        }) { (code, error) in
+        }) { (error) in
             self.showMessage(message: error)
         }
         
