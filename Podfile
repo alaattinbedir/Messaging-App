@@ -9,7 +9,7 @@ target 'MessagingApp' do
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
   pod 'ObjectMapper', '~> 3.0.0'
-  pod 'SnapKit', '~> 3.0.2'
+  pod 'SnapKit', '~> 4.0.0'
 
   target 'MessagingAppTests' do
     inherit! :search_paths
